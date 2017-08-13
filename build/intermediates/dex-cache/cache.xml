@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/home/administrador/AndroidStudioProjects/coursera/curso4/Curso4Tarea3_2/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ddd929e17e2bc6d5a4540a2a9e538ad36a8d3a9e">
+        <dex dex="/home/administrador/AndroidStudioProjects/coursera/curso4/Curso4Tarea3_2/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_525f8e517906f4c3d0ef22bdf111ce204d2fb5e2/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/administrador/AndroidStudioProjects/coursera/curso4/Curso4Tarea3_2/app/libs/additionnal.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="bd9e8dc422bb8c8405359947fe9f4282b49f57f4">
+        <dex dex="/home/administrador/AndroidStudioProjects/coursera/curso4/Curso4Tarea3_2/app/build/intermediates/transforms/dex/debug/folders/1000/2/additionnal_720d435a595f9e32a2926f0194c21008da28ccc8/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/administrador/AndroidStudioProjects/coursera/curso4/Curso4Tarea3_2/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="/home/administrador/AndroidStudioProjects/coursera/curso4/Curso4Tarea3_2/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_274acbb2b092d97e6387c2d856b735023c7062d7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/administrador/AndroidStudioProjects/coursera/curso4/Curso4Tarea3_2/app/libs/activation.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d1257cbff6faa44c1f325ae0d9413522d4644383">
+        <dex dex="/home/administrador/AndroidStudioProjects/coursera/curso4/Curso4Tarea3_2/app/build/intermediates/transforms/dex/debug/folders/1000/2/activation_0ac114a46f974ffd93c1cfe0d87126b0a8d8ce02/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/administrador/AndroidStudioProjects/coursera/curso4/Curso4Tarea3_2/app/libs/mail.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="428e267abff0d10802ccde86b915da2c20471160">
+        <dex dex="/home/administrador/AndroidStudioProjects/coursera/curso4/Curso4Tarea3_2/app/build/intermediates/transforms/dex/debug/folders/1000/2/mail_54b44b9ae069fe91bec05bfae69eab768375c5dc/classes.dex" />
+    </item>
+
+</items>

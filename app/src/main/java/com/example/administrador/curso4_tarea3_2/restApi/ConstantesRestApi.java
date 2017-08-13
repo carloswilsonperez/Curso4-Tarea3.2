@@ -7,10 +7,12 @@ package com.example.administrador.curso4_tarea3_2.restApi;
 public final class ConstantesRestApi {
 
     public static final String VERSION = "/v1/";
-    public static final String ROOT_URL = "https://api.instagram.com" + VERSION;
+    public static final String INSTAGRAM_ROOT_URL = "https://api.instagram.com" + VERSION;
     public static final String ACCESS_TOKEN = "5557323253.5477f1a.a6c8d1cf0f9747fe91b9c884bc63fcc4";
     public static final String KEY_ACCESS_TOKEN = "?access_token=";
     public static final String KEY_GET_RECENT_MEDIA_USER = "users/self/media/recent/";
+    public static final String KEY_SET_LIKE_MEDIA = "media/{media-id}/likes";
+
 
     // ************  SharedPrecerences  **************
     public static final String MI_SHARED_PREFERENCES = "MisDatos"; // nombre del SharedPreferences
@@ -20,7 +22,7 @@ public final class ConstantesRestApi {
     public static final String key_ID_USUARIO_API = "id_usuario_api"; // llave para el nombre del xml
 
 
-    public static final String HEROKU_ROOT_URL = "https://cryptic-escarpment-91937.herokuapp.com/";
+    public static final String HEROKU_ROOT_URL = "https://quiet-plateau-71586.herokuapp.com/";
     public static final String KEY_POST_REGISTRAR_USUARIO = "registrar-usuario/";
 
 }

@@ -11,7 +11,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name="com.example.administrador.curso4_tarea3_2.Activity.MainActivity"
-            android:label="Curso 4 Tarea 3.1"
+            android:label="Curso 4 Tarea 3.2"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

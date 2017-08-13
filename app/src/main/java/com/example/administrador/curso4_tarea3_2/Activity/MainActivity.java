@@ -143,7 +143,7 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.getTabAt(1).setIcon(R.drawable.ic_perro);
     }
 
-    // Metodo para enviar el tokens
+    // Metodo para enviar el tokens y el id de usuario instagram
     private void enviarTokenRegistro(String token){
         Log.d("Enviand-Token", token);
         RestApiAdapter restApiAdapter = new RestApiAdapter(); //instancio el adaptador

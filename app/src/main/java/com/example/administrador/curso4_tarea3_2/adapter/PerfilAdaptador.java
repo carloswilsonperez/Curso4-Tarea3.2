@@ -1,18 +1,29 @@
 package com.example.administrador.curso4_tarea3_2.adapter;
 
 import android.app.Activity;
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 import com.example.administrador.curso4_tarea3_2.R;
 import com.example.administrador.curso4_tarea3_2.pojo.Mascota;
+import com.example.administrador.curso4_tarea3_2.restApi.ConstantesRestApi;
+import com.example.administrador.curso4_tarea3_2.restApi.DatosPreferencias;
+import com.example.administrador.curso4_tarea3_2.restApi.EndpointsApi;
+import com.example.administrador.curso4_tarea3_2.restApi.adapter.RestApiAdapter;
+import com.example.administrador.curso4_tarea3_2.restApi.model.LikeResponse;
+import com.example.administrador.curso4_tarea3_2.restApi.model.UsuarioResponse;
 import com.squareup.picasso.Picasso;
-
 import java.util.ArrayList;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * Created by administrador on 18/05/17.
@@ -22,6 +33,8 @@ public class PerfilAdaptador extends RecyclerView.Adapter<PerfilAdaptador.Perfil
 
     ArrayList<Mascota> mascotas;
     Activity activity;
+    DatosPreferencias datosPreferencias;
+    Context context;
 
 
     //******** Constructor *******
@@ -52,6 +65,15 @@ public class PerfilAdaptador extends RecyclerView.Adapter<PerfilAdaptador.Perfil
         mascotaViewHolder.tvNumLikes.setText(Integer.toString(mascota.getLikes()));// Seteo el Número de likes del cardView
         mascotaViewHolder.llCardViewPerfil.setBackgroundResource(mascota.getColorFondo()); // Establece el color de fondo
 
+        mascotaViewHolder.imgFoto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Codigo que se ejecuta al harcer click sobre la foto
+                String tokenInstagram = ConstantesRestApi.ACCESS_TOKEN;
+                enviarLike(tokenInstagram);
+            }
+        });
+
     }
 
     @Override
@@ -63,12 +85,34 @@ public class PerfilAdaptador extends RecyclerView.Adapter<PerfilAdaptador.Perfil
         }
     }
 
+    // Metodo para enviar el tokens y el id de usuario instagram
+    private void enviarLike(String token){
+        RestApiAdapter restApiAdapter = new RestApiAdapter(); //instancio el adaptador
+        EndpointsApi endpoints = restApiAdapter.establecerConexionRestApiInstagram2(); //Conecta con el servidor de Instagram2
+        String idFotoInstagram = "1536671950728966930_5557323253";
+        Call<LikeResponse>  likeResponseCall = endpoints.setLike(idFotoInstagram, token);
+        // verificamos si salió bien
+        likeResponseCall.enqueue(new Callback<LikeResponse>() {
+            @Override
+            public void onResponse(Call<LikeResponse> call, Response<LikeResponse> response) {
+                Log.d("LikeOK", "Se dio like ok");
+                Toast.makeText(activity, "tocaste mi foto", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onFailure(Call<LikeResponse> call, Throwable t) {
+                Log.d("LikeError", "Algo salió mal al dar like");
+            }
+        });
+    }
+
+
+
     //**********  Clase interna MascotaViewHolder *****************
     public static class PerfilViewHolder extends RecyclerView.ViewHolder{
 
         private ImageView imgFoto;
         private TextView tvNumLikes;
-        //agregado
         private LinearLayout llCardViewPerfil;
 
         // Constructor
@@ -82,4 +126,6 @@ public class PerfilAdaptador extends RecyclerView.Adapter<PerfilAdaptador.Perfil
         }
 
     }
+
+
 }

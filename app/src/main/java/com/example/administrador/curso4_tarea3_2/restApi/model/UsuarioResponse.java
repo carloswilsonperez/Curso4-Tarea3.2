@@ -8,6 +8,7 @@ public class UsuarioResponse {
 
     private String id;
     private String token;
+
     public UsuarioResponse(String id, String token) {
         this.id = id;
         this.token = token;

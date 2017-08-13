@@ -20,7 +20,7 @@ public class RestApiAdapter {
     public EndpointsApi establecerConexionRestApiInstagram(Gson gson){
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(ConstantesRestApi.ROOT_URL)
+                .baseUrl(ConstantesRestApi.INSTAGRAM_ROOT_URL)
                 .addConverterFactory(GsonConverterFactory.create(gson)) // deserializacion automatica de los datos espesificos que le indica el Gson
                 .build();
         return retrofit.create(EndpointsApi.class);
@@ -51,10 +51,10 @@ public class RestApiAdapter {
         return  gsonBuilder.create();  // retorna el Gson con la asociacion creada
     }
 
-    public EndpointsApi establecerConexionRestAPI(){
+    public EndpointsApi establecerConexionRestApiInstagram2(){
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(ConstantesRestApi.HEROKU_ROOT_URL)
+                .baseUrl(ConstantesRestApi.INSTAGRAM_ROOT_URL)
                 .addConverterFactory(GsonConverterFactory.create()) // deserializacion automatica de los datos espesificos que le indica el Gson
                 .build();
         return retrofit.create(EndpointsApi.class);

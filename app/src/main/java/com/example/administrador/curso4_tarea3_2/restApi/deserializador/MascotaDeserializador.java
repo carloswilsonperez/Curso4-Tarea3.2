@@ -59,7 +59,7 @@ public class MascotaDeserializador implements JsonDeserializer<MascotaResponse>{
             mascotaActual.setUrlFoto(urlFoto);
             mascotaActual.setLikes(likes);
 
-            mascotas.add(mascotaActual); //Guardo al usuarioApi actual en el array contactos
+            mascotas.add(mascotaActual); //Guardo al usuarioApi actual en el array mascotas
         }
 
         return mascotas;
