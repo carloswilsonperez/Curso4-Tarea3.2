@@ -56,6 +56,7 @@ public class PerfilAdaptador extends RecyclerView.Adapter<PerfilAdaptador.Perfil
     public void onBindViewHolder(final PerfilAdaptador.PerfilViewHolder mascotaViewHolder, int position){
         final Mascota mascota = mascotas.get(position); //Obtiene todos los datos de la mascota en la posición position
         String ruta = mascota.getUrlFoto();
+        final String idFoto = mascota.getIdFoto();
 
         ruta = ruta.replaceAll("\"", ""); //Quito las comillas dobles que vienen con la url desde el json
  /*       Log.i(TAG, "La ruta la url es:"+ ruta);  */
@@ -70,7 +71,7 @@ public class PerfilAdaptador extends RecyclerView.Adapter<PerfilAdaptador.Perfil
             public void onClick(View v) {
                 //Codigo que se ejecuta al harcer click sobre la foto
                 String tokenInstagram = ConstantesRestApi.ACCESS_TOKEN;
-                enviarLike(tokenInstagram);
+                enviarLike(tokenInstagram, idFoto);
             }
         });
 
@@ -86,10 +87,10 @@ public class PerfilAdaptador extends RecyclerView.Adapter<PerfilAdaptador.Perfil
     }
 
     // Metodo para enviar el tokens y el id de usuario instagram
-    private void enviarLike(String token){
+    private void enviarLike(String token, String idFotoInstagram){
         RestApiAdapter restApiAdapter = new RestApiAdapter(); //instancio el adaptador
         EndpointsApi endpoints = restApiAdapter.establecerConexionRestApiInstagram2(); //Conecta con el servidor de Instagram2
-        String idFotoInstagram = "1536671950728966930_5557323253";
+        //String idFotoInstagram = "1536671950728966930_5557323253";
         Call<LikeResponse>  likeResponseCall = endpoints.setLike(idFotoInstagram, token);
         // verificamos si salió bien
         likeResponseCall.enqueue(new Callback<LikeResponse>() {

@@ -18,27 +18,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2358e7ad-6904-447c-adcc-5e9bfb505ab6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/administrador/curso4_tarea3_2/restApi/model/LikeResponse.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/administrador/curso4_tarea3_2/Activity/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/administrador/curso4_tarea3_2/Activity/MainActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/administrador/curso4_tarea3_2/adapter/PerfilAdaptador.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/administrador/curso4_tarea3_2/adapter/PerfilAdaptador.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/administrador/curso4_tarea3_2/restApi/ConstantesRestApi.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/administrador/curso4_tarea3_2/restApi/ConstantesRestApi.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/administrador/curso4_tarea3_2/restApi/EndpointsApi.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/administrador/curso4_tarea3_2/restApi/EndpointsApi.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/administrador/curso4_tarea3_2/restApi/adapter/RestApiAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/administrador/curso4_tarea3_2/restApi/adapter/RestApiAdapter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/administrador/curso4_tarea3_2/pojo/Mascota.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/administrador/curso4_tarea3_2/pojo/Mascota.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/administrador/curso4_tarea3_2/restApi/deserializador/MascotaDeserializador.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/administrador/curso4_tarea3_2/restApi/deserializador/MascotaDeserializador.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/administrador/curso4_tarea3_2/restApi/model/UsuarioResponse.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/administrador/curso4_tarea3_2/restApi/model/UsuarioResponse.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/administrador/curso4_tarea3_2/restApi/model/JsonKeys.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/administrador/curso4_tarea3_2/restApi/model/JsonKeys.java" />
     </list>
     <ignored path="Curso3_Tarea4.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -75,7 +65,7 @@
       <file leaf-file-name="EndpointsApi.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/administrador/curso4_tarea3_2/restApi/EndpointsApi.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
+            <state relative-caret-position="0">
               <caret line="26" column="31" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
               <folding />
             </state>
@@ -92,11 +82,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PerfilAdaptador.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="PerfilAdaptador.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/administrador/curso4_tarea3_2/adapter/PerfilAdaptador.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="56" column="17" selection-start-line="56" selection-start-column="17" selection-end-line="56" selection-end-column="17" />
+            <state relative-caret-position="495">
+              <caret line="81" column="29" selection-start-line="81" selection-start-column="29" selection-end-line="81" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -104,11 +94,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Mascota.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Mascota.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/administrador/curso4_tarea3_2/pojo/Mascota.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="12" column="27" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
+            <state relative-caret-position="269">
+              <caret line="55" column="5" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MascotaDeserializador.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/administrador/curso4_tarea3_2/restApi/deserializador/MascotaDeserializador.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="60" column="42" selection-start-line="60" selection-start-column="42" selection-end-line="60" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -2174,7 +2174,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/administrador/curso4_tarea1/restApi/model/JsonKeys.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/administrador/curso4_tarea1/vista_fragment/IPerfilFragmentView.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/administrador/curso4_tarea1/restApi/model/Llamador.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/administrador/curso4_tarea1/restApi/DatosPerfil.java" />
@@ -2216,15 +2215,16 @@
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/administrador/curso4_tarea3_2/presentador/PerfilFragmentPresenter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/administrador/curso4_tarea3_2/restApi/deserializador/MascotaDeserializador.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/administrador/curso4_tarea3_2/Activity/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/administrador/curso4_tarea3_2/restApi/model/UsuarioResponse.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/administrador/curso4_tarea3_2/restApi/adapter/RestApiAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/administrador/curso4_tarea3_2/restApi/ConstantesRestApi.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/administrador/curso4_tarea3_2/restApi/EndpointsApi.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/administrador/curso4_tarea3_2/restApi/model/LikeResponse.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/administrador/curso4_tarea3_2/adapter/PerfilAdaptador.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/administrador/curso4_tarea3_2/pojo/Mascota.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/administrador/curso4_tarea3_2/restApi/model/JsonKeys.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/administrador/curso4_tarea3_2/restApi/deserializador/MascotaDeserializador.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/administrador/curso4_tarea3_2/adapter/PerfilAdaptador.java" />
       </list>
     </option>
   </component>
@@ -2378,6 +2378,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Curso4Tarea3_2" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="curso4_tarea3_2" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="restApi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="deserializador" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -3173,21 +3199,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/administrador/curso4_tarea3_2/restApi/deserializador/MascotaDeserializador.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="61" column="91" selection-start-line="61" selection-start-column="91" selection-end-line="61" selection-end-column="91" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/administrador/curso4_tarea3_2/restApi/model/JsonKeys.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/administrador/curso4_tarea3_2/adapter/PageAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -3208,6 +3219,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -3271,7 +3283,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/administrador/curso4_tarea3_2/restApi/EndpointsApi.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
+        <state relative-caret-position="0">
           <caret line="26" column="31" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
           <folding />
         </state>
@@ -3285,21 +3297,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/administrador/curso4_tarea3_2/adapter/PerfilAdaptador.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/administrador/curso4_tarea3_2/restApi/model/JsonKeys.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="56" column="17" selection-start-line="56" selection-start-column="17" selection-end-line="56" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="165">
+          <caret line="11" column="46" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/administrador/curso4_tarea3_2/restApi/deserializador/MascotaDeserializador.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="60" column="42" selection-start-line="60" selection-start-column="42" selection-end-line="60" selection-end-column="42" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/administrador/curso4_tarea3_2/pojo/Mascota.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="12" column="27" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
+        <state relative-caret-position="269">
+          <caret line="55" column="5" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/administrador/curso4_tarea3_2/adapter/PerfilAdaptador.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="81" column="29" selection-start-line="81" selection-start-column="29" selection-end-line="81" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

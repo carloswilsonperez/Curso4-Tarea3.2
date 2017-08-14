@@ -11,14 +11,16 @@ public class Mascota {
     private int Likes;
     private String urlFoto;
     private int colorFondo;
+    private String idFoto;
 
 
     //Contructor
-    public Mascota (String nombre, int Likes, String urlFoto, int colorFondo){
+    public Mascota (String nombre, int Likes, String urlFoto, int colorFondo, String idFoto){
         this.nombre = nombre;
         this.Likes = Likes;
         this.urlFoto = urlFoto;
         this.colorFondo = colorFondo;
+        this.idFoto = idFoto;
     }
 
     public Mascota(){
@@ -63,5 +65,13 @@ public class Mascota {
 
     public void setColorFondo(int colorFondo) {
         this.colorFondo = colorFondo;
+    }
+
+    public String getIdFoto() {
+        return idFoto;
+    }
+
+    public void setIdFoto(String idFoto) {
+        this.idFoto = idFoto;
     }
 }

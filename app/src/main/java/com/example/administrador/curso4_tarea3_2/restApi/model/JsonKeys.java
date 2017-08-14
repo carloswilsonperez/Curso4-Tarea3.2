@@ -8,6 +8,7 @@ public final class JsonKeys {
 
     public static final String DATA_RESPONCE_ARRAY = "data";
     public static final String USER = "user";
+    public static final String idFoto = "id";
     public static final String USER_ID = "id";
     public static final String USER_NAME = "username";
     public static final String PROFILE_PICTURE = "profile_picture";

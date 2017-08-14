@@ -41,6 +41,7 @@ public class MascotaDeserializador implements JsonDeserializer<MascotaResponse>{
 
         for (int i = 0; i < mascotaResponseData.size(); i++) {
             JsonObject mascotaResponseDataObject = (JsonObject) mascotaResponseData.get(i).getAsJsonObject();//Obtiene un elemento objeto del array
+            String idFoto = mascotaResponseDataObject.get(JsonKeys.idFoto).getAsString();
             JsonObject usuarioJson = mascotaResponseDataObject.getAsJsonObject(JsonKeys.USER); //obtiene el objeto usuarioApi
             String id = usuarioJson.get(JsonKeys.USER_ID).getAsString(); //obtiene el id del usuarioApi
             Log.d(TAG, "el valor del id es-> " + id);
@@ -58,6 +59,7 @@ public class MascotaDeserializador implements JsonDeserializer<MascotaResponse>{
             mascotaActual.setNombre(nombreCompleto);
             mascotaActual.setUrlFoto(urlFoto);
             mascotaActual.setLikes(likes);
+            mascotaActual.setIdFoto(idFoto);
 
             mascotas.add(mascotaActual); //Guardo al usuarioApi actual en el array mascotas
         }
