@@ -21,8 +21,9 @@ public final class ConstantesRestApi {
     public static final String key_USUARIO_API = "usuario_api"; // llave para el nombre del xml
     public static final String key_ID_USUARIO_API = "id_usuario_api"; // llave para el nombre del xml
 
-
+    // ************** Rutas servidor Rest Heroku ***************************************
     public static final String HEROKU_ROOT_URL = "https://quiet-plateau-71586.herokuapp.com/";
-    public static final String KEY_POST_REGISTRAR_USUARIO = "registrar-usuario/";
+    public static final String PUT_DISPOSITIVO_USUARIO = "dispositivo-usuario/"; //guarda el dispositivo y el usuario en la bd
+    public static final String POST_LIKE = "likes/"; //guarda el id_foto_instagram el id_usuario_instagram y el id_dispositivo en la bd
 
 }

@@ -145,12 +145,10 @@ public class MainActivity extends AppCompatActivity {
 
     // Metodo para enviar el tokens y el id de usuario instagram
     private void enviarTokenRegistro(String token){
-        Log.d("Enviand-Token", token);
         RestApiAdapter restApiAdapter = new RestApiAdapter(); //instancio el adaptador
         EndpointsApi endpoints = restApiAdapter.establecerConexionHeroku(); //Conecta con el servidor de Heroku
         // Obtengo el id del usuario de instagram que está guardado en mi dispositivo
         datosPreferencias = new DatosPreferencias(this);
-       // usuario = datosPreferencias.getUsuarioApi();
         idUsuario = datosPreferencias.getIdUsuarioApi();
         //por último se utiliza el metodo que registra el token
         Call<UsuarioResponse> usuarioResponseCall = endpoints.registrarUsuario(token, idUsuario);

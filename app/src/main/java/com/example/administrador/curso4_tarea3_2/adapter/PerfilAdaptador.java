@@ -1,7 +1,6 @@
 package com.example.administrador.curso4_tarea3_2.adapter;
 
 import android.app.Activity;
-import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -17,8 +16,10 @@ import com.example.administrador.curso4_tarea3_2.restApi.ConstantesRestApi;
 import com.example.administrador.curso4_tarea3_2.restApi.DatosPreferencias;
 import com.example.administrador.curso4_tarea3_2.restApi.EndpointsApi;
 import com.example.administrador.curso4_tarea3_2.restApi.adapter.RestApiAdapter;
-import com.example.administrador.curso4_tarea3_2.restApi.model.LikeResponse;
+import com.example.administrador.curso4_tarea3_2.restApi.model.LikeResponseHeroku;
+import com.example.administrador.curso4_tarea3_2.restApi.model.LikeResponseInstagram;
 import com.example.administrador.curso4_tarea3_2.restApi.model.UsuarioResponse;
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import retrofit2.Call;
@@ -34,7 +35,6 @@ public class PerfilAdaptador extends RecyclerView.Adapter<PerfilAdaptador.Perfil
     ArrayList<Mascota> mascotas;
     Activity activity;
     DatosPreferencias datosPreferencias;
-    Context context;
 
 
     //******** Constructor *******
@@ -56,10 +56,8 @@ public class PerfilAdaptador extends RecyclerView.Adapter<PerfilAdaptador.Perfil
     public void onBindViewHolder(final PerfilAdaptador.PerfilViewHolder mascotaViewHolder, int position){
         final Mascota mascota = mascotas.get(position); //Obtiene todos los datos de la mascota en la posición position
         String ruta = mascota.getUrlFoto();
-        final String idFoto = mascota.getIdFoto();
-
+        final String idFotoInstagram = mascota.getIdFoto();
         ruta = ruta.replaceAll("\"", ""); //Quito las comillas dobles que vienen con la url desde el json
- /*       Log.i(TAG, "La ruta la url es:"+ ruta);  */
         Picasso.with(activity) // Libreria para traer las fotos
                 .load(ruta) // trae la foto del usuarioApi
                 .into(mascotaViewHolder.imgFoto); // ImagenView dode se va a mostrar la foto
@@ -68,13 +66,16 @@ public class PerfilAdaptador extends RecyclerView.Adapter<PerfilAdaptador.Perfil
 
         mascotaViewHolder.imgFoto.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                //Codigo que se ejecuta al harcer click sobre la foto
+            public void onClick(View v) {   //Codigo que se ejecuta al harcer click sobre la foto
+                datosPreferencias = new DatosPreferencias(activity);
+                String idUsuarioInstagram = datosPreferencias.getIdUsuarioApi();
                 String tokenInstagram = ConstantesRestApi.ACCESS_TOKEN;
-                enviarLike(tokenInstagram, idFoto);
+                String idDispositivo = FirebaseInstanceId.getInstance().getToken(); //captura el token del dispositivo
+                enviarLike(tokenInstagram, idFotoInstagram); //envia un like a la foto de instagram
+                registrarDispositivoYUsuario(idDispositivo, idUsuarioInstagram);//guarda el dispositivo y el usuario de instagram en firebase
+                registrarLike(idFotoInstagram, idUsuarioInstagram, idDispositivo);//guarda los datos del like en firebase
             }
         });
-
     }
 
     @Override
@@ -85,29 +86,6 @@ public class PerfilAdaptador extends RecyclerView.Adapter<PerfilAdaptador.Perfil
             return mascotas.size();
         }
     }
-
-    // Metodo para enviar el tokens y el id de usuario instagram
-    private void enviarLike(String token, String idFotoInstagram){
-        RestApiAdapter restApiAdapter = new RestApiAdapter(); //instancio el adaptador
-        EndpointsApi endpoints = restApiAdapter.establecerConexionRestApiInstagram2(); //Conecta con el servidor de Instagram2
-        //String idFotoInstagram = "1536671950728966930_5557323253";
-        Call<LikeResponse>  likeResponseCall = endpoints.setLike(idFotoInstagram, token);
-        // verificamos si salió bien
-        likeResponseCall.enqueue(new Callback<LikeResponse>() {
-            @Override
-            public void onResponse(Call<LikeResponse> call, Response<LikeResponse> response) {
-                Log.d("LikeOK", "Se dio like ok");
-                Toast.makeText(activity, "tocaste mi foto", Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onFailure(Call<LikeResponse> call, Throwable t) {
-                Log.d("LikeError", "Algo salió mal al dar like");
-            }
-        });
-    }
-
-
 
     //**********  Clase interna MascotaViewHolder *****************
     public static class PerfilViewHolder extends RecyclerView.ViewHolder{
@@ -125,7 +103,69 @@ public class PerfilAdaptador extends RecyclerView.Adapter<PerfilAdaptador.Perfil
             // Agregado
             this.llCardViewPerfil = (LinearLayout) itemView.findViewById(R.id.llCardViewPerfil);
         }
+    }
 
+    // Metodo para guardar el token y el id de usuario instagram en la base de datos Firebase por intermedio de Heroku
+    private void registrarDispositivoYUsuario(String idDispositivo, String idUsuarioInstagram){
+        RestApiAdapter restApiAdapter = new RestApiAdapter(); //instancio el adaptador
+        EndpointsApi endpoints = restApiAdapter.establecerConexionHeroku(); //Conecta con el servidor de Heroku
+        //por último se utiliza el metodo que registra el token
+        Call<UsuarioResponse> usuarioResponseCall = endpoints.registrarUsuario(idDispositivo, idUsuarioInstagram);
+        // verificamos si salió bien
+        usuarioResponseCall.enqueue(new Callback<UsuarioResponse>() {
+            @Override
+            public void onResponse(Call<UsuarioResponse> call, Response<UsuarioResponse> response) {
+                //Como la clase "UsuarioResponse" es identica a la respuesta no es necesario crear un deserializador
+                UsuarioResponse usuarioResponse = response.body(); //obtiene la respuesta
+                //aqui podemos guardar los datos localmente
+                Log.d("ID_FIREBASE", "Este es el ID ->"+ usuarioResponse.getId());
+                Log.d("TOKEN_FIREBASE", "Este es el TOKEN ->"+ usuarioResponse.getToken());
+            }
+            @Override
+            public void onFailure(Call<UsuarioResponse> call, Throwable t) {
+                Log.d("ERROR_CONEXION_FIREBASE", "Huvo un error de conexión!");
+            }
+        });
+    }
+
+
+    // Método POST, que al tocar sobre una foto envia un like a instagram
+    private void enviarLike(String tokenInstagram, String idFotoInstagram){
+        RestApiAdapter restApiAdapter = new RestApiAdapter(); //instancio el adaptador
+        EndpointsApi endpoints = restApiAdapter.establecerConexionRestApiInstagram2(); //conecta con el servidor de Instagram2
+        Call<LikeResponseInstagram>  likeResponseCall = endpoints.setLike(idFotoInstagram, tokenInstagram);//envía el like a la foto de instagram
+        // verificamos si salió bien
+        likeResponseCall.enqueue(new Callback<LikeResponseInstagram>() {
+            @Override
+            public void onResponse(Call<LikeResponseInstagram> call, Response<LikeResponseInstagram> response) {
+                Toast.makeText(activity, "Has enviado un like a la foto", Toast.LENGTH_LONG).show();
+               // String idDispositivo = FirebaseInstanceId.getInstance().getToken(); //captura el token del dispositivo
+                Log.d("LikeOk", "El like ha sido enviado a instagram");
+            }
+            @Override
+            public void onFailure(Call<LikeResponseInstagram> call, Throwable t) {
+                Log.d("LikeError", "Algo salió mal al dar like en la foto");
+            }
+        });
+    }
+
+
+    // Metodo POST, al tocar sobre una foto, esta petición guarda el like con los datos en la bd de Firebase
+    private void registrarLike(String idFotoInstagram, String idUsuarioInstagram, String idDispositivo){
+        RestApiAdapter restApiAdapter = new RestApiAdapter(); //instancio el adaptador
+        EndpointsApi endpoints = restApiAdapter.establecerConexionHeroku(); //Conecta con el servidor de Heroku
+        Call<LikeResponseHeroku> likeResponseHerokuCall = endpoints.registrarLike(idFotoInstagram, idUsuarioInstagram, idDispositivo);
+        likeResponseHerokuCall.enqueue(new Callback<LikeResponseHeroku>() {
+            @Override
+            public void onResponse(Call<LikeResponseHeroku> call, Response<LikeResponseHeroku> response) {
+                Log.d("RegistraLikeOk", "El like se ha guardado en Firebase utilizando Heroku");
+            }
+
+            @Override
+            public void onFailure(Call<LikeResponseHeroku> call, Throwable t) {
+                Log.d("RegistraLikeError", "Hubo un error al guardar el like en Firebase utilizando Heroku");
+            }
+        });
     }
 
 

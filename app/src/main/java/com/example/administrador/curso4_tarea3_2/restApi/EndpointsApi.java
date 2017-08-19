@@ -1,6 +1,7 @@
 package com.example.administrador.curso4_tarea3_2.restApi;
 
-import com.example.administrador.curso4_tarea3_2.restApi.model.LikeResponse;
+import com.example.administrador.curso4_tarea3_2.restApi.model.LikeResponseHeroku;
+import com.example.administrador.curso4_tarea3_2.restApi.model.LikeResponseInstagram;
 import com.example.administrador.curso4_tarea3_2.restApi.model.MascotaResponse;
 import com.example.administrador.curso4_tarea3_2.restApi.model.PerfilResponse;
 import com.example.administrador.curso4_tarea3_2.restApi.model.UsuarioResponse;
@@ -24,27 +25,36 @@ public interface EndpointsApi {
     //Obtenga los medios más recientes publicados por un usuario: https://api.instagram.com/v1/users/{user-id}/media/recent/?access_token=ACCESS-TOKEN
     //https://api.instagram.com/v1/users/5623708812/media/recent/?access_token=5557323253.5477f1a.a6c8d1cf0f9747fe91b9c884bc63fcc4
     @GET("users/{id}/media/recent/")//Peticion GET a la api de instagram que va a ser usada por el metodo seguido
-    Call<MascotaResponse> getRecentMedia(@Path("id") String id,
-                                         @Query("access_token") String token); //Retrofit necesita usar la clase Call
+    Call<MascotaResponse> getRecentMedia(@Path("id") String idUsuarioInstagram,
+                                         @Query("access_token") String tokenInstagram); //Retrofit necesita usar la clase Call
 
     /* GET PARA BUSCAR LOS USUARIOS POR NOMBRE, a partir de ahi podemos obtener el id y luego hacer mas consultas
     https://api.instagram.com/v1/users/search?q=supermascota5&access_token=5557323253.5477f1a.a6c8d1cf0f9747fe91b9c884bc63fcc4   */
     @GET("users/search") //
-    Call<PerfilResponse> getPerfil(@Query("q") String usuario,
-                                   @Query("access_token") String token);
+    Call<PerfilResponse> getPerfil(@Query("q") String usuarioInstagram,
+                                   @Query("access_token") String tokenInstagram);
 
-    // Registra el token y el id de usuario de instagram
+    // Registra el id del dispositivo y el id de usuario de instagram que está utilizando
     @FormUrlEncoded
-    @PUT(ConstantesRestApi.KEY_POST_REGISTRAR_USUARIO)
-    Call<UsuarioResponse> registrarUsuario(@Field("id_dispositivo") String id_dispositivo,
-                                           @Field("id_usuario_instagram") String id_usuario_instagram);
+    @PUT(ConstantesRestApi.PUT_DISPOSITIVO_USUARIO)
+    Call<UsuarioResponse> registrarUsuario(@Field("id_dispositivo") String idDispositivo,
+                                           @Field("id_usuario_instagram") String idUsuarioInstagram);
 
 
     /*  Petición POST para darle like a una foto de instagram
         https://api.instagram.com/v1/media/{media-id}/likes   */
     @FormUrlEncoded
     @POST(ConstantesRestApi.KEY_SET_LIKE_MEDIA)
-    Call<LikeResponse> setLike(@Path("media-id") String idFotoInstagram,
-                               @Field("access_token") String token);
+    Call<LikeResponseInstagram> setLike(@Path("media-id") String idFotoInstagram,
+                                        @Field("access_token") String tokenInstagram);
+
+
+    /*  Petición POST al Servidor web Heroku para guardar el like junto con sus datos en la bd de Firebase
+       https://quiet-plateau-71586.herokuapp.com/likes   */
+    @FormUrlEncoded
+    @POST(ConstantesRestApi.POST_LIKE)
+    Call<LikeResponseHeroku> registrarLike(@Field("id_foto_instagram") String idFotoInstagram,
+                                           @Field("id_usuario_instagram") String idUsuarioInstagram,
+                                           @Field("id_dispositivo") String idDispositivo);
 
 }
