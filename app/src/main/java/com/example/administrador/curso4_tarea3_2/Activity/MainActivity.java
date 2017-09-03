@@ -14,7 +14,6 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
-
 import com.example.administrador.curso4_tarea3_2.R;
 import com.example.administrador.curso4_tarea3_2.adapter.PageAdapter;
 import com.example.administrador.curso4_tarea3_2.restApi.ConstantesRestApi;
@@ -45,7 +44,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         toolbar     = (Toolbar)findViewById(R.id.toolbar);
         tabLayout   = (TabLayout)findViewById(R.id.tabLayout);
         viewPager   = (ViewPager) findViewById(R.id.viewPager);
@@ -68,6 +66,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        setUpViewPager(); //Activa los fragments
         // Verifica si hay un perfil guardado y si no hay le asigna el perfil por defecto
         datosPreferencias = new DatosPreferencias(this);
         usuario = datosPreferencias.getUsuarioApi();
@@ -76,14 +80,20 @@ public class MainActivity extends AppCompatActivity {
             datosPreferencias.setUsuarioApi(ConstantesRestApi.MI_USUARIO_SANDBOX);
             datosPreferencias.setIdUsuarioApi(ConstantesRestApi.MI_ID_USUARIO_SANDBOX);
         }
-
+        Bundle bundle = getIntent().getExtras();//obtiene el codigo de llamada del PendigIntent de la notificación
+        //si el intent no está vacío inicia en la pestaña 1
+        if(bundle!=null){
+            int numTab = bundle.getInt("numTab");
+            if (numTab == 1) {
+                // Abres la página que quieras
+                viewPager.setCurrentItem(1); // 1 para ir a la segunda página ya que empiezan en 0
+                Log.d("ABRIR-TAB", "estas dentro del if para abrir la pestaña 1");
+            }else {
+                Log.d("ABRIR-TAB", "estas FUERA del if ");
+            }
+        }
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        setUpViewPager(); //Activa los fragments
-    }
 
     @Override public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

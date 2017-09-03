@@ -77,7 +77,7 @@ public class PerfilFragmentPresenter implements IPerfilFragmentPresenter{
         iPerfilFragmentView.generarGridLayout();// Luego se debe indicar que genere el GridLayout
     }
 
-    @Override // Aqui comienza el llamdo para obtener el perfil de la api de instagram
+    @Override // Llamdo para obtener el perfil de la api de instagram
     public void obtenerPerfil() {
         RestApiAdapter restApiAdapter = new RestApiAdapter();
         Gson gsonPerfil = restApiAdapter.construyeGesonDeserializadorPerfil();
@@ -100,9 +100,8 @@ public class PerfilFragmentPresenter implements IPerfilFragmentPresenter{
         });
     }
 
-    @Override // Aqui comienza el llamdo para obtener el perfil de la api de instagram
+    @Override // Aqui comienza el llamdo para obtener el perfil, con esto se obtiene el id del usuario de instagram
     public void obtenerIdPerfil(String usuario) {
-
         RestApiAdapter restApiAdapter = new RestApiAdapter();
         Gson gsonPerfil = restApiAdapter.construyeGesonDeserializadorPerfil();
         EndpointsApi endpointsApi = restApiAdapter.establecerConexionRestApiInstagram(gsonPerfil);
@@ -122,7 +121,6 @@ public class PerfilFragmentPresenter implements IPerfilFragmentPresenter{
                 Log.e(TAG, t.toString());
             }
         });
-
     }
 
     @Override

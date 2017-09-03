@@ -18,6 +18,7 @@ import com.example.administrador.curso4_tarea3_2.restApi.EndpointsApi;
 import com.example.administrador.curso4_tarea3_2.restApi.adapter.RestApiAdapter;
 import com.example.administrador.curso4_tarea3_2.restApi.model.LikeResponseHeroku;
 import com.example.administrador.curso4_tarea3_2.restApi.model.LikeResponseInstagram;
+import com.example.administrador.curso4_tarea3_2.restApi.model.NotificaLikeResponse;
 import com.example.administrador.curso4_tarea3_2.restApi.model.UsuarioResponse;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.squareup.picasso.Picasso;
@@ -74,6 +75,7 @@ public class PerfilAdaptador extends RecyclerView.Adapter<PerfilAdaptador.Perfil
                 enviarLike(tokenInstagram, idFotoInstagram); //envia un like a la foto de instagram
                 registrarDispositivoYUsuario(idDispositivo, idUsuarioInstagram);//guarda el dispositivo y el usuario de instagram en firebase
                 registrarLike(idFotoInstagram, idUsuarioInstagram, idDispositivo);//guarda los datos del like en firebase
+                notificarLike(idUsuarioInstagram); //envia las notificaciones
             }
         });
     }
@@ -158,6 +160,8 @@ public class PerfilAdaptador extends RecyclerView.Adapter<PerfilAdaptador.Perfil
         likeResponseHerokuCall.enqueue(new Callback<LikeResponseHeroku>() {
             @Override
             public void onResponse(Call<LikeResponseHeroku> call, Response<LikeResponseHeroku> response) {
+                LikeResponseHeroku likeResponseHeroku = response.body();
+                String regirolike = likeResponseHeroku.getId_dispositivo();
                 Log.d("RegistraLikeOk", "El like se ha guardado en Firebase utilizando Heroku");
             }
 
@@ -166,6 +170,27 @@ public class PerfilAdaptador extends RecyclerView.Adapter<PerfilAdaptador.Perfil
                 Log.d("RegistraLikeError", "Hubo un error al guardar el like en Firebase utilizando Heroku");
             }
         });
+    }
+
+    // Metodo GET, para enviar notificaciones
+    private void notificarLike(String idUsuarioInstagram){
+        RestApiAdapter restApiAdapter = new RestApiAdapter(); //instancio el adaptador
+        EndpointsApi endpoints = restApiAdapter.establecerConexionHeroku(); //Conecta con el servidor de Heroku
+        final Call<NotificaLikeResponse> notificaLikeResponseCall = endpoints.notificaLike(idUsuarioInstagram);
+        notificaLikeResponseCall.enqueue(new Callback<NotificaLikeResponse>() {
+            @Override
+            public void onResponse(Call<NotificaLikeResponse> call, Response<NotificaLikeResponse> response) {
+                NotificaLikeResponse notificaLikeResponse = response.body();
+                String id_dispositivo = notificaLikeResponse.getId_dispositivo();
+                Log.d("NotificaLikeOk", "Se han envíado las notificaciones a: ");
+            }
+
+            @Override
+            public void onFailure(Call<NotificaLikeResponse> call, Throwable t) {
+                Log.d("NotificaLikeError", "Hubo un error al intentar enviar las notificaciones");
+            }
+        });
+
     }
 
 

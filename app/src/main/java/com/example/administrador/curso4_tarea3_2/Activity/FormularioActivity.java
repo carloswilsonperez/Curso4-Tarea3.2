@@ -73,7 +73,7 @@ public class FormularioActivity extends AppCompatActivity {
                         Message message = new MimeMessage(session);
                         message.setFrom(new InternetAddress(correo)); //Correo del emisor
                         message.setSubject("Tarea 4, correo de pruebas"); //Asunto del msj
-                        message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(etMail.getText().toString()));//Destinatarios
+                        message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(etMail.getText().toString()));//Destinatario
                         message.setContent(etMensaje.getText().toString(), "text/html; charset=utf-8");// Tipo de contenido que vamos a enviar
 
                         //Enviamos el correo

@@ -1,8 +1,14 @@
 package com.example.administrador.curso4_tarea3_2.Activity;
 
+import android.app.Activity;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.widget.Button;
 
 import com.example.administrador.curso4_tarea3_2.R;
 
@@ -19,8 +25,7 @@ public class AcercadeActivity extends AppCompatActivity {
             getSupportActionBar().setDisplayShowTitleEnabled(false); // Oculta el titulo del ToolBar
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);   // boton para atras
         }
-
-
     }
+
 
 }

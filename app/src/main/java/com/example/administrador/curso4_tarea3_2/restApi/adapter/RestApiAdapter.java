@@ -25,14 +25,13 @@ public class RestApiAdapter {
                 .build();
         return retrofit.create(EndpointsApi.class);
     }
-
+    
     public EndpointsApi establecerConexionHeroku(){
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(ConstantesRestApi.HEROKU_ROOT_URL) //url base
                 .addConverterFactory(GsonConverterFactory.create()) //Convierte la respuesta en gson
                 .build();
-
         return retrofit.create(EndpointsApi.class);
     }
 

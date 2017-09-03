@@ -2,12 +2,21 @@
 <items version="2" >
 
     <item
+        is-multidex="false"
+        jar="/home/administrador/AndroidStudioProjects/coursera/curso4/Curso4Tarea3_2/app/libs/mail.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="428e267abff0d10802ccde86b915da2c20471160">
+        <dex dex="/home/administrador/AndroidStudioProjects/coursera/curso4/Curso4Tarea3_2/app/build/intermediates/pre-dexed/debug/mail_54b44b9ae069fe91bec05bfae69eab768375c5dc.jar" />
+    </item>
+    <item
         is-multidex="true"
         jar="/home/administrador/AndroidStudioProjects/coursera/curso4/Curso4Tarea3_2/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="ddd929e17e2bc6d5a4540a2a9e538ad36a8d3a9e">
+        sha1="f20face937fbfd999100207d61a50a1e33777e4f">
         <dex dex="/home/administrador/AndroidStudioProjects/coursera/curso4/Curso4Tarea3_2/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_525f8e517906f4c3d0ef22bdf111ce204d2fb5e2/classes.dex" />
     </item>
     <item
@@ -38,6 +47,15 @@
         <dex dex="/home/administrador/AndroidStudioProjects/coursera/curso4/Curso4Tarea3_2/app/build/intermediates/transforms/dex/debug/folders/1000/2/activation_0ac114a46f974ffd93c1cfe0d87126b0a8d8ce02/classes.dex" />
     </item>
     <item
+        is-multidex="false"
+        jar="/home/administrador/AndroidStudioProjects/coursera/curso4/Curso4Tarea3_2/app/libs/activation.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d1257cbff6faa44c1f325ae0d9413522d4644383">
+        <dex dex="/home/administrador/AndroidStudioProjects/coursera/curso4/Curso4Tarea3_2/app/build/intermediates/pre-dexed/debug/activation_0ac114a46f974ffd93c1cfe0d87126b0a8d8ce02.jar" />
+    </item>
+    <item
         is-multidex="true"
         jar="/home/administrador/AndroidStudioProjects/coursera/curso4/Curso4Tarea3_2/app/libs/mail.jar"
         jumboMode="true"
@@ -45,6 +63,15 @@
         revision="25.0.2"
         sha1="428e267abff0d10802ccde86b915da2c20471160">
         <dex dex="/home/administrador/AndroidStudioProjects/coursera/curso4/Curso4Tarea3_2/app/build/intermediates/transforms/dex/debug/folders/1000/2/mail_54b44b9ae069fe91bec05bfae69eab768375c5dc/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/administrador/AndroidStudioProjects/coursera/curso4/Curso4Tarea3_2/app/libs/additionnal.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="bd9e8dc422bb8c8405359947fe9f4282b49f57f4">
+        <dex dex="/home/administrador/AndroidStudioProjects/coursera/curso4/Curso4Tarea3_2/app/build/intermediates/pre-dexed/debug/additionnal_720d435a595f9e32a2926f0194c21008da28ccc8.jar" />
     </item>
 
 </items>

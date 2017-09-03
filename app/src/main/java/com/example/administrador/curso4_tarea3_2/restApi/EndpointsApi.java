@@ -3,9 +3,9 @@ package com.example.administrador.curso4_tarea3_2.restApi;
 import com.example.administrador.curso4_tarea3_2.restApi.model.LikeResponseHeroku;
 import com.example.administrador.curso4_tarea3_2.restApi.model.LikeResponseInstagram;
 import com.example.administrador.curso4_tarea3_2.restApi.model.MascotaResponse;
+import com.example.administrador.curso4_tarea3_2.restApi.model.NotificaLikeResponse;
 import com.example.administrador.curso4_tarea3_2.restApi.model.PerfilResponse;
 import com.example.administrador.curso4_tarea3_2.restApi.model.UsuarioResponse;
-
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
@@ -57,4 +57,8 @@ public interface EndpointsApi {
                                            @Field("id_usuario_instagram") String idUsuarioInstagram,
                                            @Field("id_dispositivo") String idDispositivo);
 
+    /* GET PARA enviar notificaciones a los susuarios que tengan este id_usuarios propietarios de la foto
+    https://quiet-plateau-71586.herokuapp.com/notifica-like/:id_usuario_instagram  */
+    @GET("notifica-like/{id_usuario_instagram}/")
+    Call<NotificaLikeResponse> notificaLike(@Path("id_usuario_instagram") String idUsuarioInstagram);
 }

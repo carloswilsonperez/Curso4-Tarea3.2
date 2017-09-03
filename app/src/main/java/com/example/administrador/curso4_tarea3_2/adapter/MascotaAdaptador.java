@@ -62,7 +62,6 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
         mascotaViewHolder.btnLike.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 ConstructorMascotas constructorMascotas = new ConstructorMascotas(activity);
                 constructorMascotas.darLikeMascota(mascota); // llama al metodo
                 mascotaViewHolder.tvNumLikes.setText(Integer.toString(constructorMascotas.obtenerLikesMascota(mascota)));
@@ -82,14 +81,12 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
 
     //**********  Clase interna MascotaViewHolder *****************
     public static class MascotaViewHolder extends RecyclerView.ViewHolder{
-
         private ImageView imgFoto;
         private ImageButton btnLike;
         private TextView tvNombre;
         private TextView tvNumLikes;
         //agregado
         private LinearLayout llCardView;
-
         // Constructor
         public MascotaViewHolder(View itemView){
             super(itemView);

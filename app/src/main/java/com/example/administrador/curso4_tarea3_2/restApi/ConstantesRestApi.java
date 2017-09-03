@@ -25,5 +25,6 @@ public final class ConstantesRestApi {
     public static final String HEROKU_ROOT_URL = "https://quiet-plateau-71586.herokuapp.com/";
     public static final String PUT_DISPOSITIVO_USUARIO = "dispositivo-usuario/"; //guarda el dispositivo y el usuario en la bd
     public static final String POST_LIKE = "likes/"; //guarda el id_foto_instagram el id_usuario_instagram y el id_dispositivo en la bd
+    public static final String GET_NOTIFICA_LIKE = "notifica-like/"; //envia las notificaciones a los que esten usando ese id_usuario_instagram
 
 }

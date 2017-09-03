@@ -8,12 +8,12 @@ import com.google.firebase.iid.FirebaseInstanceIdService;
 /**
  * Created by administrador on 05/08/17.
  */
-
+// Esta clase maneja el servicio de token
 public class NotificationIDTokenService extends FirebaseInstanceIdService {
 
     public final static String TAG = "FIREBASE_TOKEN";
 
-    @Override //Metodo que obtien el token
+    @Override //este método esta escuchando para recibir el token o si el token cambia
     public void onTokenRefresh() {
         //super.onTokenRefresh();
         String token = FirebaseInstanceId.getInstance().getToken(); // Obtiene el token

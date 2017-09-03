@@ -27,7 +27,8 @@
             android:contentDescription="Mi mascota"
             android:layout_margin="3dp"
             app:srcCompat="@drawable/perro01"
-            tools:ignore="ContentDescription,HardcodedText" />
+            tools:ignore="ContentDescription,HardcodedText"
+            />
 
         <android.support.constraint.ConstraintLayout
             android:id="@+id/constraint2"
